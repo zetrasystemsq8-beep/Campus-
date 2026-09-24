@@ -4,11 +4,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/academics/presentation/add_course_screen.dart';
 import '../../features/auth/presentation/auth_providers.dart';
 import '../../features/auth/presentation/forgot_password_screen.dart';
 import '../../features/auth/presentation/login_screen.dart';
 import '../../features/auth/presentation/register_screen.dart';
 import '../../features/home/app_gate.dart';
+import '../../features/planner/presentation/add_plan_screen.dart';
+import '../../features/planner/presentation/timetable_screen.dart';
 import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/privacy_screen.dart';
 
@@ -49,6 +52,9 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/forgot-password', builder: (_, __) => const ForgotPasswordScreen()),
       GoRoute(path: '/profile/edit', builder: (_, __) => const EditProfileScreen()),
       GoRoute(path: '/settings/privacy', builder: (_, __) => const PrivacyScreen()),
+      GoRoute(path: '/academics/add-course', builder: (_, __) => const AddCourseScreen()),
+      GoRoute(path: '/planner/add', builder: (_, __) => const AddPlanScreen()),
+      GoRoute(path: '/planner/timetable', builder: (_, __) => const TimetableScreen()),
     ],
   );
   ref.onDispose(router.dispose);

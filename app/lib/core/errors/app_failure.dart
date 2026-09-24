@@ -37,7 +37,7 @@ class AppFailure implements Exception {
     if (error is PostgrestException) {
       switch (error.code) {
         case '23505':
-          return const AppFailure('That value is already taken. Try another.');
+          return const AppFailure('That already exists. Try another.');
         case '23514':
           return const AppFailure('Those selections do not match. Please review them.');
         case '42501':

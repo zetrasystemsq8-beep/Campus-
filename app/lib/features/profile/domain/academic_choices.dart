@@ -16,3 +16,16 @@ List<String> parseTags(String raw) {
       .take(30)
       .toList();
 }
+
+/// Academic session labels like 2025/2026, newest first (sessions start around September).
+List<String> sessionLabels() {
+  final now = DateTime.now();
+  final start = now.month >= 8 ? now.year : now.year - 1;
+  return [for (var y = start + 1; y >= start - 5; y--) '$y/${y + 1}'];
+}
+
+String currentSessionLabel() {
+  final now = DateTime.now();
+  final start = now.month >= 8 ? now.year : now.year - 1;
+  return '$start/${start + 1}';
+}

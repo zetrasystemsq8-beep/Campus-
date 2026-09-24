@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../academics/presentation/academics_tab.dart';
+import '../planner/presentation/planner_tab.dart';
 import '../profile/presentation/profile_tab.dart';
 import 'home_tab.dart';
 
@@ -21,6 +23,8 @@ class MainShell extends StatefulWidget {
 class _MainShellState extends State<MainShell> {
   static const _destinations = [
     _Destination('Home', Icons.home_outlined, Icons.home, HomeTab()),
+    _Destination('Academics', Icons.school_outlined, Icons.school, AcademicsTab()),
+    _Destination('Planner', Icons.event_note_outlined, Icons.event_note, PlannerTab()),
     _Destination('Profile', Icons.person_outline, Icons.person, ProfileTab()),
   ];
   int _index = 0;
