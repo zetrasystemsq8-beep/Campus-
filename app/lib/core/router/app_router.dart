@@ -12,6 +12,9 @@ import '../../features/auth/presentation/register_screen.dart';
 import '../../features/home/app_gate.dart';
 import '../../features/planner/presentation/add_plan_screen.dart';
 import '../../features/planner/presentation/timetable_screen.dart';
+import '../../features/qa/presentation/ask_question_screen.dart';
+import '../../features/qa/presentation/question_detail_screen.dart';
+import '../../features/qa/presentation/saved_questions_screen.dart';
 import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/profile/presentation/privacy_screen.dart';
 
@@ -55,6 +58,12 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/academics/add-course', builder: (_, __) => const AddCourseScreen()),
       GoRoute(path: '/planner/add', builder: (_, __) => const AddPlanScreen()),
       GoRoute(path: '/planner/timetable', builder: (_, __) => const TimetableScreen()),
+      GoRoute(path: '/qa/ask', builder: (_, __) => const AskQuestionScreen()),
+      GoRoute(path: '/qa/saved', builder: (_, __) => const SavedQuestionsScreen()),
+      GoRoute(
+        path: '/qa/:id',
+        builder: (_, state) => QuestionDetailScreen(questionId: state.pathParameters['id']!),
+      ),
     ],
   );
   ref.onDispose(router.dispose);

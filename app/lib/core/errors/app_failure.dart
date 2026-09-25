@@ -40,6 +40,8 @@ class AppFailure implements Exception {
           return const AppFailure('That already exists. Try another.');
         case '23514':
           return const AppFailure('Those selections do not match. Please review them.');
+        case '54000':
+          return const AppFailure('You have reached the daily limit for this. Try again tomorrow.');
         case '42501':
           return const AppFailure('You do not have permission to do that.');
       }

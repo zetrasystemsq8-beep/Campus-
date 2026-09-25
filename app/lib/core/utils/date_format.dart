@@ -11,3 +11,13 @@ String formatDateTime(DateTime d) => '${formatDate(d)}, ${formatHm(d.hour, d.min
 
 /// '09:00:00' -> '09:00'
 String trimSeconds(String t) => t.length >= 5 ? t.substring(0, 5) : t;
+
+/// Compact relative time: "just now", "5m", "3h", "2d", else a date.
+String timeAgo(DateTime t) {
+  final d = DateTime.now().difference(t);
+  if (d.inMinutes < 1) return 'just now';
+  if (d.inMinutes < 60) return '${d.inMinutes}m ago';
+  if (d.inHours < 24) return '${d.inHours}h ago';
+  if (d.inDays < 7) return '${d.inDays}d ago';
+  return formatDate(t);
+}

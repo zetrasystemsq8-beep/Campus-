@@ -16,5 +16,6 @@ Flutter (Android-first) + Supabase (auth, Postgres, RLS, storage, realtime, Edge
 ## Build status
 - Phase 1: DB foundation (university structure, profiles, roles, blocks, reports, audit, RLS); Flutter skeleton; email auth.
 - Phase 2: onboarding, profile view/edit, privacy controls, bottom-nav shell.
-- Phase 3: course enrollments, scores, configurable-scale GPA/CGPA with retakes and carryovers, weekly timetable, planner (assignments/tests/exams/study/events), live Home dashboard. Migration `0003_academics_planner.sql`. Tests: `app/test/grading_test.dart`.
-- Next: Phase 4 learning content + Q&A. Later: communities + messaging, Groq AI (Edge Function), tutoring + marketplace, opportunities, campus services, notifications, admin, docs.
+- Phase 3: course enrollments, scores, configurable-scale GPA/CGPA with retakes and carryovers, weekly timetable, planner, live Home dashboard.
+- Phase 4: university Q&A - ask/search/browse, answers, helpful votes, accepted answers (+reputation), saved questions, daily post limits, report + block. Migration `0004_qa.sql`.
+- Next: Phase 5 communities + messaging. Later: Groq AI (Edge Function), tutoring + marketplace, opportunities, campus services, notifications, admin, docs.

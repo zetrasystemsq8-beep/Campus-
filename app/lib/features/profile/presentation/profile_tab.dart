@@ -59,6 +59,7 @@ class ProfileTab extends ConsumerWidget {
           const SizedBox(height: Spacing.md),
           Center(child: Text(p.displayName, style: text.titleLarge?.copyWith(fontWeight: FontWeight.w700))),
           Center(child: Text('@${p.username}', style: text.bodyMedium)),
+          Center(child: Text('${p.reputation} reputation', style: text.bodySmall)),
           if (p.isVerified)
             const Padding(
               padding: EdgeInsets.only(top: Spacing.sm),
